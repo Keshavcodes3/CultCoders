@@ -1,0 +1,2344 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cult Coders Community - Code. Create. Conquer.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+              body {
+                  font-family: 'Roboto', sans-serif;
+              }
+              h1, h2, h3 {
+                  font-family: 'Orbitron', sans-serif;
+              }
+
+              /* Animated Background */
+              .animated-bg {
+                  background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e);
+                  position: relative;
+                  overflow: hidden;
+              }
+
+              .wave {
+                  position: absolute;
+                  width: 200%;
+                  height: 200%;
+                  background: linear-gradient(45deg,
+                      rgba(0, 255, 157, 0.1),
+                      rgba(0, 183, 255, 0.1),
+                      rgba(138, 43, 226, 0.1));
+                  animation: wave 15s infinite linear;
+              }
+
+              @keyframes wave {
+                  0% { transform: translate(-50%, -50%) rotate(0deg); }
+                  100% { transform: translate(-50%, -50%) rotate(360deg); }
+              }
+
+              /* Typewriter Effect */
+              .typewriter {
+                  overflow: hidden;
+                  white-space: nowrap;
+                  animation: typing 3s steps(40, end);
+              }
+
+              @keyframes typing {
+                  from { width: 0 }
+                  to { width: 100% }
+              }
+
+              /* Fade In */
+              .fade-in {
+                  animation: fadeIn 2s ease-in 3s forwards;
+                  opacity: 0;
+              }
+
+              @keyframes fadeIn {
+                  to { opacity: 1; }
+              }
+
+              /* Gradient Button */
+              .gradient-btn {
+                  background: linear-gradient(90deg, #00ff9d, #00b7ff);
+                  transition: all 0.3s ease;
+              }
+
+              .gradient-btn:hover {
+                  background: linear-gradient(90deg, #00b7ff, #8a2be2);
+                  transform: translateY(-2px);
+                  box-shadow: 0 10px 25px rgba(0, 255, 157, 0.3);
+              }
+
+              /* Neon Glow */
+              .neon-text {
+                  text-shadow: 0 0 10px rgba(0, 255, 157, 0.5),
+                               0 0 20px rgba(0, 255, 157, 0.3),
+                               0 0 30px rgba(0, 255, 157, 0.2);
+              }
+
+              /* Card Hover Effects */
+              .tutorial-card {
+                  transition: all 0.3s ease;
+                  background: rgba(26, 26, 46, 0.6);
+                  backdrop-filter: blur(10px);
+              }
+
+              .tutorial-card:hover {
+                  transform: translateY(-10px);
+                  box-shadow: 0 15px 35px rgba(0, 255, 157, 0.2);
+              }
+
+              .project-card {
+                  transition: all 0.3s ease;
+                  position: relative;
+                  overflow: hidden;
+              }
+
+              .project-card:hover {
+                  transform: scale(1.05);
+              }
+
+              .project-overlay {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background: rgba(0, 0, 0, 0.85);
+                  opacity: 0;
+                  transition: opacity 0.3s ease;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 2rem;
+              }
+
+              .project-card:hover .project-overlay {
+                  opacity: 1;
+              }
+
+              /* Smooth Scroll */
+              html {
+                  scroll-behavior: smooth;
+              }
+
+              /* Sticky Nav */
+              .sticky-nav {
+                  transition: all 0.3s ease;
+              }
+
+              .sticky-nav.scrolled {
+                  background: rgba(10, 10, 10, 0.95);
+                  backdrop-filter: blur(10px);
+                  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+              }
+
+              /* Stats Counter Animation */
+              @keyframes countUp {
+                  from { opacity: 0; transform: translateY(20px); }
+                  to { opacity: 1; transform: translateY(0); }
+              }
+
+              .stat-item {
+                  animation: countUp 1s ease-out forwards;
+              }
+
+              /* Form Styles */
+              input, textarea {
+                  background: rgba(26, 26, 46, 0.6);
+                  border: 1px solid rgba(0, 255, 157, 0.3);
+                  transition: all 0.3s ease;
+              }
+
+              input:focus, textarea:focus {
+                  outline: none;
+                  border-color: #00ff9d;
+                  box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+              }
+
+              /* Success Message */
+              .success-message {
+                  animation: slideDown 0.5s ease-out;
+              }
+
+              @keyframes slideDown {
+                  from {
+                      opacity: 0;
+                      transform: translateY(-20px);
+                  }
+                  to {
+                      opacity: 1;
+                      transform: translateY(0);
+                  }
+              }
+              /* Enhanced Navigation Styles */
+      .sticky-nav {
+          transition: all 0.3s ease;
+      }
+
+      .sticky-nav.scrolled .nav-container {
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+                      0 0 20px rgba(0, 255, 157, 0.1),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-container {
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                      0 0 15px rgba(0, 255, 157, 0.05),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+      }
+
+      .nav-container::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg,
+              transparent,
+              rgba(0, 255, 157, 0.1),
+              transparent);
+          transition: left 0.5s ease;
+      }
+
+      .nav-container:hover::before {
+          left: 100%;
+      }
+
+      .logo-icon {
+          animation: pulse 3s ease-in-out infinite;
+          transition: transform 0.3s ease;
+      }
+
+      .logo-icon:hover {
+          transform: rotate(360deg) scale(1.1);
+      }
+
+      @keyframes pulse {
+          0%, 100% {
+              box-shadow: 0 0 10px rgba(0, 255, 157, 0.3),
+                          0 0 20px rgba(0, 183, 255, 0.2);
+          }
+          50% {
+              box-shadow: 0 0 20px rgba(0, 255, 157, 0.5),
+                          0 0 30px rgba(0, 183, 255, 0.3),
+                          0 0 40px rgba(138, 43, 226, 0.2);
+          }
+      }
+
+      .neon-text-logo {
+          filter: drop-shadow(0 0 10px rgba(0, 255, 157, 0.5));
+          transition: all 0.3s ease;
+      }
+
+      .neon-text-logo:hover {
+          filter: drop-shadow(0 0 15px rgba(0, 255, 157, 0.8))
+                  drop-shadow(0 0 25px rgba(0, 183, 255, 0.5));
+      }
+
+      .nav-link {
+          font-weight: 500;
+          position: relative;
+          transition: all 0.3s ease;
+      }
+
+      .nav-link::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 12px;
+          padding: 2px;
+          background: linear-gradient(45deg, #00ff9d, #00b7ff, #8a2be2);
+          -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                        linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+      }
+
+      .nav-link:hover::before {
+          opacity: 0.5;
+      }
+
+      .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: 5px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background: linear-gradient(90deg, #00ff9d, #00b7ff);
+          transition: width 0.3s ease;
+          border-radius: 2px;
+          box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+      }
+
+      .nav-link:hover::after {
+          width: 80%;
+      }
+
+      .nav-link:hover {
+          transform: translateY(-2px);
+      }
+
+      .nav-link-bg {
+          box-shadow: inset 0 0 20px rgba(0, 255, 157, 0.1);
+      }
+
+      .join-nav-btn {
+          position: relative;
+          overflow: hidden;
+          box-shadow: 0 4px 15px rgba(0, 255, 157, 0.3),
+                      0 0 20px rgba(0, 183, 255, 0.2);
+          transition: all 0.3s ease;
+      }
+
+      .join-nav-btn::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          transition: width 0.6s, height 0.6s;
+      }
+
+      .join-nav-btn:hover::before {
+          width: 300px;
+          height: 300px;
+      }
+
+      .join-nav-btn:hover {
+          box-shadow: 0 6px 25px rgba(0, 255, 157, 0.5),
+                      0 0 30px rgba(0, 183, 255, 0.4),
+                      0 0 40px rgba(138, 43, 226, 0.2);
+          transform: translateY(-2px);
+      }
+
+      .join-nav-btn:active {
+          transform: scale(0.95);
+      }
+
+      .mobile-menu-btn {
+          transition: all 0.3s ease;
+          box-shadow: 0 0 10px rgba(0, 255, 157, 0.2);
+      }
+
+      .mobile-menu-btn:hover {
+          transform: rotate(90deg) scale(1.1);
+          box-shadow: 0 0 20px rgba(0, 255, 157, 0.4),
+                      0 0 30px rgba(0, 183, 255, 0.3);
+      }
+
+      .mobile-menu-btn:active {
+          transform: rotate(90deg) scale(0.95);
+      }
+
+      /* Mobile Menu Styles */
+      .mobile-menu-container {
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                      0 0 20px rgba(0, 255, 157, 0.1),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+          animation: slideDown 0.3s ease-out;
+      }
+
+      @keyframes slideDown {
+          from {
+              opacity: 0;
+              transform: translateY(-20px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      .mobile-nav-link {
+          position: relative;
+          transition: all 0.3s ease;
+      }
+
+      .mobile-nav-link::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 3px;
+          height: 0;
+          background: linear-gradient(180deg, #00ff9d, #00b7ff);
+          border-radius: 3px;
+          transition: height 0.3s ease;
+          box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+      }
+
+      .mobile-nav-link:hover::before {
+          height: 70%;
+      }
+
+      .mobile-nav-link:hover {
+          transform: translateX(5px);
+          box-shadow: 0 4px 15px rgba(0, 255, 157, 0.1);
+      }
+
+      .mobile-nav-link svg {
+          transition: transform 0.3s ease;
+      }
+
+      .mobile-nav-link:hover svg {
+          transform: scale(1.2) rotate(5deg);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+          .nav-container {
+              padding: 1rem;
+          }
+
+          .logo-icon {
+              padding: 0.5rem;
+          }
+
+          .logo-icon svg {
+              width: 1.5rem;
+              height: 1.5rem;
+          }
+      }
+
+      /* Additional hover effects for desktop nav */
+      @media (min-width: 769px) {
+          .nav-link {
+              text-shadow: 0 0 0 transparent;
+              transition: text-shadow 0.3s ease, transform 0.3s ease;
+          }
+
+          .nav-link:hover {
+              text-shadow: 0 0 10px currentColor,
+                           0 0 20px currentColor;
+          }
+      }
+
+      /* Smooth transitions for all nav elements */
+      * {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Glass morphism effect enhancement */
+      @supports (backdrop-filter: blur(10px)) {
+          .nav-container,
+          .mobile-menu-container {
+              backdrop-filter: blur(20px) saturate(180%);
+          }
+      }
+
+      /* Focus styles for accessibility */
+      .nav-link:focus,
+      .mobile-nav-link:focus,
+      .join-nav-btn:focus,
+      .mobile-menu-btn:focus {
+          outline: 2px solid #00ff9d;
+          outline-offset: 2px;
+          border-radius: 8px;
+      }
+
+      /* Active state */
+      .nav-link:active,
+      .mobile-nav-link:active {
+          transform: scale(0.98);
+      }
+
+      /* Gradient animation on scroll */
+      @keyframes gradientShift {
+          0% {
+              background-position: 0% 50%;
+          }
+          50% {
+              background-position: 100% 50%;
+          }
+          100% {
+              background-position: 0% 50%;
+          }
+      }
+
+      .sticky-nav.scrolled .nav-container {
+          background: linear-gradient(90deg,
+              rgba(10, 10, 10, 0.98),
+              rgba(26, 26, 46, 0.98),
+              rgba(22, 33, 62, 0.98),
+              rgba(26, 26, 46, 0.98),
+              rgba(10, 10, 10, 0.98));
+          background-size: 200% 200%;
+          animation: gradientShift 10s ease infinite;
+      }
+
+      /* Loading animation for nav */
+      @keyframes navLoad {
+          from {
+              opacity: 0;
+              transform: translateY(-100%);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      .sticky-nav {
+          animation: navLoad 0.5s ease-out;
+      }
+
+      /* Ripple effect on click */
+      .nav-link,
+      .mobile-nav-link,
+      .join-nav-btn {
+          position: relative;
+          overflow: hidden;
+      }
+
+      .nav-link::after,
+      .mobile-nav-link::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background: rgba(0, 255, 157, 0.3);
+          transform: translate(-50%, -50%);
+          transition: width 0.6s, height 0.6s;
+          pointer-events: none;
+      }
+
+      .nav-link:active::after,
+      .mobile-nav-link:active::after {
+          width: 200px;
+          height: 200px;
+      }
+
+      /* Improved shadow layers */
+      .nav-container {
+          box-shadow:
+              /* Main shadow */
+              0 8px 32px rgba(0, 0, 0, 0.4),
+              /* Neon glow */
+              0 0 15px rgba(0, 255, 157, 0.05),
+              /* Inner highlight */
+              inset 0 1px 0 rgba(255, 255, 255, 0.05),
+              /* Outer glow */
+              0 0 1px rgba(0, 183, 255, 0.1);
+      }
+
+      .sticky-nav.scrolled .nav-container {
+          box-shadow:
+              /* Stronger main shadow */
+              0 10px 40px rgba(0, 0, 0, 0.6),
+              /* Enhanced neon glow */
+              0 0 20px rgba(0, 255, 157, 0.1),
+              /* Inner highlight */
+              inset 0 1px 0 rgba(255, 255, 255, 0.1),
+              /* Multiple outer glows */
+              0 0 30px rgba(0, 183, 255, 0.08),
+              0 0 50px rgba(138, 43, 226, 0.05);
+      }
+
+      /* Particle effect background (subtle) */
+      .nav-container::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image:
+              radial-gradient(circle at 20% 50%, rgba(0, 255, 157, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(0, 183, 255, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 40% 20%, rgba(138, 43, 226, 0.03) 0%, transparent 50%);
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+      }
+
+      .nav-container:hover::after {
+          opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <!-- Enhanced Navigation with Gradient, Shadows & Rounded Design -->
+    <nav class="sticky-nav fixed w-full top-0 z-50 px-6 py-3">
+      <div class="container mx-auto">
+        <!-- Main Nav Container with Glass Effect -->
+        <div
+          class="nav-container bg-gradient-to-r from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700/50 px-6 py-4"
+        >
+          <div class="flex justify-between items-center">
+            <!-- Logo Section with Gradient -->
+            <div class="flex items-center space-x-3">
+              <div
+                class="logo-icon bg-gradient-to-br from-[#00ff9d] via-[#00b7ff] to-[#8a2be2] p-2 rounded-xl shadow-lg"
+              >
+                <svg
+                  class="w-8 h-8 text-gray-900"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <span
+                  class="text-2xl font-bold bg-gradient-to-r from-[#00ff9d] via-[#00b7ff] to-[#8a2be2] bg-clip-text text-transparent neon-text-logo"
+                >
+                  Cult Coders
+                </span>
+                <p class="text-xs text-gray-400 -mt-1">Community</p>
+              </div>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <ul class="hidden md:flex items-center space-x-2">
+              <li>
+                <a
+                  href="#home"
+                  class="nav-link px-5 py-2.5 rounded-xl text-white hover:text-[#00ff9d] transition-all duration-300 relative group"
+                >
+                  <span class="relative z-10">Home</span>
+                  <div
+                    class="nav-link-bg absolute inset-0 bg-gradient-to-r from-[#00ff9d]/10 to-[#00b7ff]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#tutorials"
+                  class="nav-link px-5 py-2.5 rounded-xl text-white hover:text-[#00b7ff] transition-all duration-300 relative group"
+                >
+                  <span class="relative z-10">Tutorials</span>
+                  <div
+                    class="nav-link-bg absolute inset-0 bg-gradient-to-r from-[#00b7ff]/10 to-[#8a2be2]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="nav-link px-5 py-2.5 rounded-xl text-white hover:text-[#8a2be2] transition-all duration-300 relative group"
+                >
+                  <span class="relative z-10">Projects</span>
+                  <div
+                    class="nav-link-bg absolute inset-0 bg-gradient-to-r from-[#8a2be2]/10 to-[#00ff9d]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="nav-link px-5 py-2.5 rounded-xl text-white hover:text-[#00ff9d] transition-all duration-300 relative group"
+                >
+                  <span class="relative z-10">About</span>
+                  <div
+                    class="nav-link-bg absolute inset-0 bg-gradient-to-r from-[#00ff9d]/10 to-[#00b7ff]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </li>
+            </ul>
+
+            <!-- CTA Button & Mobile Menu -->
+            <div class="flex items-center space-x-4">
+              <!-- Join Button with Gradient -->
+              <a
+                href="#join"
+                class="hidden md:block join-nav-btn bg-gradient-to-r from-[#00ff9d] to-[#00b7ff] text-gray-900 px-6 py-2.5 rounded-xl font-semibold shadow-lg hover:shadow-[#00ff9d]/50 transition-all duration-300 hover:scale-105"
+              >
+                Join Us
+              </a>
+
+              <!-- Mobile Menu Button -->
+              <button
+                class="md:hidden mobile-menu-btn bg-gradient-to-r from-[#00ff9d]/20 to-[#00b7ff]/20 p-3 rounded-xl border border-[#00ff9d]/30 hover:border-[#00ff9d] transition-all duration-300"
+                id="mobile-menu-btn"
+              >
+                <svg
+                  class="w-6 h-6 text-[#00ff9d]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enhanced Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden mt-4 mobile-menu-container bg-gradient-to-br from-gray-900/98 via-gray-800/98 to-gray-900/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700/50 p-6 animate-slideDown"
+        >
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#home"
+                class="mobile-nav-link flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-[#00ff9d]/10 hover:to-[#00b7ff]/10 transition-all duration-300 border border-transparent hover:border-[#00ff9d]/30"
+              >
+                <svg
+                  class="w-5 h-5 text-[#00ff9d]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  ></path>
+                </svg>
+                <span
+                  class="text-white hover:text-[#00ff9d] transition-colors duration-300"
+                  >Home</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#tutorials"
+                class="mobile-nav-link flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-[#00b7ff]/10 hover:to-[#8a2be2]/10 transition-all duration-300 border border-transparent hover:border-[#00b7ff]/30"
+              >
+                <svg
+                  class="w-5 h-5 text-[#00b7ff]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  ></path>
+                </svg>
+                <span
+                  class="text-white hover:text-[#00b7ff] transition-colors duration-300"
+                  >Tutorials</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="mobile-nav-link flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-[#8a2be2]/10 hover:to-[#00ff9d]/10 transition-all duration-300 border border-transparent hover:border-[#8a2be2]/30"
+              >
+                <svg
+                  class="w-5 h-5 text-[#8a2be2]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+                <span
+                  class="text-white hover:text-[#8a2be2] transition-colors duration-300"
+                  >Projects</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="mobile-nav-link flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-[#00ff9d]/10 hover:to-[#00b7ff]/10 transition-all duration-300 border border-transparent hover:border-[#00ff9d]/30"
+              >
+                <svg
+                  class="w-5 h-5 text-[#00ff9d]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                <span
+                  class="text-white hover:text-[#00ff9d] transition-colors duration-300"
+                  >About</span
+                >
+              </a>
+            </li>
+            <li class="pt-3 border-t border-gray-700/50">
+              <a
+                href="#join"
+                class="mobile-nav-link flex items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#00ff9d] to-[#00b7ff] text-gray-900 font-semibold hover:shadow-lg hover:shadow-[#00ff9d]/50 transition-all duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                  ></path>
+                </svg>
+                <span>Join the Community</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section
+      id="home"
+      class="animated-bg min-h-screen flex items-center justify-center relative"
+    >
+      <div class="wave"></div>
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 typewriter neon-text">
+          Cult Coders
+        </h1>
+        <p class="text-2xl md:text-3xl mb-4 fade-in font-['Poppins']">
+          Code. Create. Conquer.
+        </p>
+        <p
+          class="text-lg md:text-xl mb-10 fade-in text-gray-300 max-w-2xl mx-auto"
+        >
+          Join the best coders' community, learn together, and innovate!
+        </p>
+        <a
+          href="#join"
+          class="gradient-btn inline-block px-10 py-4 rounded-full text-lg font-semibold text-gray-900"
+        >
+          Join Us
+        </a>
+      </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section
+      id="tutorials"
+      class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-800"
+    >
+      <div class="container mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 neon-text">
+          Tutorials
+        </h2>
+        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          Master the skills you need with our comprehensive tutorials
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Tutorial Card 1 -->
+          <div class="tutorial-card rounded-xl p-6 border border-[#00ff9d]/20">
+            <div class="text-5xl mb-4">🟨</div>
+            <h3 class="text-2xl font-bold mb-3 text-[#00ff9d]">JavaScript</h3>
+            <p class="text-gray-400 mb-6">
+              Master modern JavaScript from basics to advanced concepts
+              including ES6+, async programming, and frameworks.
+            </p>
+            <button
+              class="bg-[#00ff9d] text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-[#00b7ff] hover:scale-110 transition-all duration-300"
+            >
+              Start Tutorial
+            </button>
+          </div>
+
+          <!-- Tutorial Card 2 -->
+          <div class="tutorial-card rounded-xl p-6 border border-[#00b7ff]/20">
+            <div class="text-5xl mb-4">🐍</div>
+            <h3 class="text-2xl font-bold mb-3 text-[#00b7ff]">Python</h3>
+            <p class="text-gray-400 mb-6">
+              Dive into Python programming for web development, data science,
+              automation, and machine learning.
+            </p>
+            <button
+              class="bg-[#00b7ff] text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-[#8a2be2] hover:scale-110 transition-all duration-300"
+            >
+              Start Tutorial
+            </button>
+          </div>
+
+          <!-- Tutorial Card 3 -->
+          <div class="tutorial-card rounded-xl p-6 border border-[#8a2be2]/20">
+            <div class="text-5xl mb-4">🌐</div>
+            <h3 class="text-2xl font-bold mb-3 text-[#8a2be2]">
+              Web Development
+            </h3>
+            <p class="text-gray-400 mb-6">
+              Build stunning websites with HTML, CSS, JavaScript, and modern
+              frameworks like React and Vue.
+            </p>
+            <button
+              class="bg-[#8a2be2] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00ff9d] hover:text-gray-900 hover:scale-110 transition-all duration-300"
+            >
+              Start Tutorial
+            </button>
+          </div>
+
+          <!-- Tutorial Card 4 -->
+          <div class="tutorial-card rounded-xl p-6 border border-[#00ff9d]/20">
+            <div class="text-5xl mb-4">⚛️</div>
+            <h3 class="text-2xl font-bold mb-3 text-[#00ff9d]">React</h3>
+            <p class="text-gray-400 mb-6">
+              Learn to build powerful, scalable applications with React, hooks,
+              and state management.
+            </p>
+            <button
+              class="bg-[#00ff9d] text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-[#00b7ff] hover:scale-110 transition-all duration-300"
+            >
+              Start Tutorial
+            </button>
+          </div>
+
+          <!-- Tutorial Card 5 -->
+          <div class="tutorial-card rounded-xl p-6 border border-[#00b7ff]/20">
+            <div class="text-5xl mb-4">🗄️</div>
+            <h3 class="text-2xl font-bold mb-3 text-[#00b7ff]">Database</h3>
+            <p class="text-gray-400 mb-6">
+              Understand SQL, NoSQL, and database design principles for
+              efficient data management.
+            </p>
+            <button
+              class="bg-[#00b7ff] text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-[#8a2be2] hover:scale-110 transition-all duration-300"
+            >
+              Start Tutorial
+            </button>
+          </div>
+
+          <!-- Tutorial Card 6 -->
+          <div class="tutorial-card rounded-xl p-6 border border-[#8a2be2]/20">
+            <div class="text-5xl mb-4">🔧</div>
+            <h3 class="text-2xl font-bold mb-3 text-[#8a2be2]">DevOps</h3>
+            <p class="text-gray-400 mb-6">
+              Master CI/CD, Docker, Kubernetes, and cloud platforms to
+              streamline your deployment.
+            </p>
+            <button
+              class="bg-[#8a2be2] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00ff9d] hover:text-gray-900 hover:scale-110 transition-all duration-300"
+            >
+              Start Tutorial
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="py-20 px-6 bg-gradient-to-b from-gray-800 to-gray-900"
+    >
+      <div class="container mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 neon-text">
+          Community Projects
+        </h2>
+        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          Explore amazing projects built by our community members
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card 1 -->
+          <div
+            class="project-card rounded-xl overflow-hidden bg-gray-800 border border-gray-700"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-[#00ff9d] to-[#00b7ff] flex items-center justify-center"
+            >
+              <span class="text-6xl">💬</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Real-Time Chat App</h3>
+              <p class="text-gray-400 text-sm">
+                Built with Socket.io and React
+              </p>
+            </div>
+            <div class="project-overlay">
+              <h3 class="text-2xl font-bold mb-4">Real-Time Chat App</h3>
+              <p class="text-gray-300 text-center mb-6">
+                A fully functional chat application with real-time messaging,
+                user authentication, and room creation features.
+              </p>
+              <div class="flex gap-4">
+                <button
+                  class="bg-[#00ff9d] text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-white transition-all duration-300"
+                >
+                  View Project
+                </button>
+                <button
+                  class="border border-[#00ff9d] text-[#00ff9d] px-6 py-2 rounded-lg font-semibold hover:bg-[#00ff9d] hover:text-gray-900 transition-all duration-300"
+                >
+                  Fork Project
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div
+            class="project-card rounded-xl overflow-hidden bg-gray-800 border border-gray-700"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-[#8a2be2] to-[#00ff9d] flex items-center justify-center"
+            >
+              <span class="text-6xl">🎨</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Portfolio Builder</h3>
+              <p class="text-gray-400 text-sm">
+                Built with Next.js and Tailwind CSS
+              </p>
+            </div>
+            <div class="project-overlay">
+              <h3 class="text-2xl font-bold mb-4">Portfolio Builder</h3>
+              <p class="text-gray-300 text-center mb-6">
+                Create stunning portfolio websites with customizable templates,
+                drag-and-drop functionality, and responsive designs.
+              </p>
+              <div class="flex gap-4">
+                <button
+                  class="bg-[#8a2be2] text-white px-6 py-2 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300"
+                >
+                  View Project
+                </button>
+                <button
+                  class="border border-[#8a2be2] text-[#8a2be2] px-6 py-2 rounded-lg font-semibold hover:bg-[#8a2be2] hover:text-white transition-all duration-300"
+                >
+                  Fork Project
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div
+            class="project-card rounded-xl overflow-hidden bg-gray-800 border border-gray-700"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-[#00b7ff] to-[#8a2be2] flex items-center justify-center"
+            >
+              <span class="text-6xl">📊</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                Data Visualization Dashboard
+              </h3>
+              <p class="text-gray-400 text-sm">Built with D3.js and Vue.js</p>
+            </div>
+            <div class="project-overlay">
+              <h3 class="text-2xl font-bold mb-4">
+                Data Visualization Dashboard
+              </h3>
+              <p class="text-gray-300 text-center mb-6">
+                Interactive dashboard with real-time data visualization, custom
+                charts, and comprehensive analytics tools.
+              </p>
+              <div class="flex gap-4">
+                <button
+                  class="bg-[#00b7ff] text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-white transition-all duration-300"
+                >
+                  View Project
+                </button>
+                <button
+                  class="border border-[#00b7ff] text-[#00b7ff] px-6 py-2 rounded-lg font-semibold hover:bg-[#00b7ff] hover:text-gray-900 transition-all duration-300"
+                >
+                  Fork Project
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 4 -->
+          <div
+            class="project-card rounded-xl overflow-hidden bg-gray-800 border border-gray-700"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-[#00ff9d] to-[#8a2be2] flex items-center justify-center"
+            >
+              <span class="text-6xl">🛒</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
+              <p class="text-gray-400 text-sm">Built with MERN Stack</p>
+            </div>
+            <div class="project-overlay">
+              <h3 class="text-2xl font-bold mb-4">E-Commerce Platform</h3>
+              <p class="text-gray-300 text-center mb-6">
+                Full-featured e-commerce solution with payment integration,
+                inventory management, and admin dashboard.
+              </p>
+              <div class="flex gap-4">
+                <button
+                  class="bg-[#00ff9d] text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-white transition-all duration-300"
+                >
+                  View Project
+                </button>
+                <button
+                  class="border border-[#00ff9d] text-[#00ff9d] px-6 py-2 rounded-lg font-semibold hover:bg-[#00ff9d] hover:text-gray-900 transition-all duration-300"
+                >
+                  Fork Project
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 5 -->
+          <div
+            class="project-card rounded-xl overflow-hidden bg-gray-800 border border-gray-700"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-[#8a2be2] to-[#00b7ff] flex items-center justify-center"
+            >
+              <span class="text-6xl">🤖</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">AI Chatbot</h3>
+              <p class="text-gray-400 text-sm">
+                Built with Python and TensorFlow
+              </p>
+            </div>
+            <div class="project-overlay">
+              <h3 class="text-2xl font-bold mb-4">AI Chatbot</h3>
+              <p class="text-gray-300 text-center mb-6">
+                Intelligent chatbot powered by machine learning with natural
+                language processing capabilities.
+              </p>
+              <div class="flex gap-4">
+                <button
+                  class="bg-[#8a2be2] text-white px-6 py-2 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300"
+                >
+                  View Project
+                </button>
+                <button
+                  class="border border-[#8a2be2] text-[#8a2be2] px-6 py-2 rounded-lg font-semibold hover:bg-[#8a2be2] hover:text-white transition-all duration-300"
+                >
+                  Fork Project
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 6 -->
+          <div
+            class="project-card rounded-xl overflow-hidden bg-gray-800 border border-gray-700"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-[#00b7ff] to-[#00ff9d] flex items-center justify-center"
+            >
+              <span class="text-6xl">🎮</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Game Development Engine</h3>
+              <p class="text-gray-400 text-sm">
+                Built with JavaScript and WebGL
+              </p>
+            </div>
+            <div class="project-overlay">
+              <h3 class="text-2xl font-bold mb-4">Game Development Engine</h3>
+              <p class="text-gray-300 text-center mb-6">
+                2D/3D game engine with physics simulation, particle systems, and
+                comprehensive game development tools.
+              </p>
+              <div class="flex gap-4">
+                <button
+                  class="bg-[#00b7ff] text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-white transition-all duration-300"
+                >
+                  View Project
+                </button>
+                <button
+                  class="border border-[#00b7ff] text-[#00b7ff] px-6 py-2 rounded-lg font-semibold hover:bg-[#00b7ff] hover:text-gray-900 transition-all duration-300"
+                >
+                  Fork Project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section
+      id="about"
+      class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-800"
+    >
+      <div class="container mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 neon-text">
+          About Cult Coders
+        </h2>
+        <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+          We're more than just a community - we're a movement
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div class="space-y-6">
+            <h3 class="text-3xl font-bold text-[#00ff9d]">Our Mission</h3>
+            <p class="text-gray-300 leading-relaxed">
+              At Cult Coders, we believe that coding is more than just writing
+              lines of code - it's about creating solutions, building
+              communities, and pushing the boundaries of what's possible. Our
+              mission is to empower developers of all skill levels to learn,
+              collaborate, and innovate together.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+              We provide a platform where beginners can learn from experienced
+              developers, where ideas can be shared freely, and where everyone
+              has the opportunity to contribute to meaningful projects that make
+              a difference.
+            </p>
+            <h3 class="text-3xl font-bold text-[#00b7ff] pt-4">
+              What Makes Us Unique
+            </h3>
+            <ul class="space-y-3 text-gray-300">
+              <li class="flex items-start">
+                <span class="text-[#00ff9d] mr-3 text-xl">✓</span>
+                <span
+                  >Collaborative learning environment with peer-to-peer
+                  mentorship</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#00ff9d] mr-3 text-xl">✓</span>
+                <span
+                  >Real-world projects that build your portfolio and
+                  skills</span
+                >
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#00ff9d] mr-3 text-xl">✓</span>
+                <span>Weekly coding challenges and hackathons with prizes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#00ff9d] mr-3 text-xl">✓</span>
+                <span>Industry connections and job opportunities</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#00ff9d] mr-3 text-xl">✓</span>
+                <span
+                  >Supportive community that celebrates your achievements</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-6">
+            <h3 class="text-3xl font-bold text-[#8a2be2]">Our Values</h3>
+            <div class="space-y-4">
+              <div
+                class="bg-gray-800/50 p-6 rounded-lg border border-[#00ff9d]/20 hover:border-[#00ff9d]/50 transition-all duration-300"
+              >
+                <h4 class="text-xl font-bold text-[#00ff9d] mb-2">
+                  Innovation
+                </h4>
+                <p class="text-gray-400">
+                  We encourage creative thinking and pushing boundaries to solve
+                  complex problems.
+                </p>
+              </div>
+              <div
+                class="bg-gray-800/50 p-6 rounded-lg border border-[#00b7ff]/20 hover:border-[#00b7ff]/50 transition-all duration-300"
+              >
+                <h4 class="text-xl font-bold text-[#00b7ff] mb-2">
+                  Collaboration
+                </h4>
+                <p class="text-gray-400">
+                  Together we achieve more. We foster teamwork and knowledge
+                  sharing.
+                </p>
+              </div>
+              <div
+                class="bg-gray-800/50 p-6 rounded-lg border border-[#8a2be2]/20 hover:border-[#8a2be2]/50 transition-all duration-300"
+              >
+                <h4 class="text-xl font-bold text-[#8a2be2] mb-2">
+                  Continuous Learning
+                </h4>
+                <p class="text-gray-400">
+                  Technology evolves, and so do we. We're committed to lifelong
+                  learning.
+                </p>
+              </div>
+              <div
+                class="bg-gray-800/50 p-6 rounded-lg border border-[#00ff9d]/20 hover:border-[#00ff9d]/50 transition-all duration-300"
+              >
+                <h4 class="text-xl font-bold text-[#00ff9d] mb-2">
+                  Inclusivity
+                </h4>
+                <p class="text-gray-400">
+                  Everyone is welcome here, regardless of background or
+                  experience level.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="stat-item">
+            <div class="text-5xl font-bold text-[#00ff9d] mb-2">500+</div>
+            <div class="text-gray-400 text-lg">Active Coders</div>
+          </div>
+          <div class="stat-item" style="animation-delay: 0.2s;">
+            <div class="text-5xl font-bold text-[#00b7ff] mb-2">1000+</div>
+            <div class="text-gray-400 text-lg">Projects Built</div>
+          </div>
+          <div class="stat-item" style="animation-delay: 0.4s;">
+            <div class="text-5xl font-bold text-[#8a2be2] mb-2">50+</div>
+            <div class="text-gray-400 text-lg">Tutorials</div>
+          </div>
+          <div class="stat-item" style="animation-delay: 0.6s;">
+            <div class="text-5xl font-bold text-[#00ff9d] mb-2">24/7</div>
+            <div class="text-gray-400 text-lg">Community Support</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section
+      id="join"
+      class="py-20 px-6 bg-gradient-to-b from-gray-800 to-gray-900 relative overflow-hidden"
+    >
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-0 left-0 w-full h-full"
+          style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,255,157,0.1) 35px, rgba(0,255,157,0.1) 70px);"
+        ></div>
+      </div>
+
+      <div class="container mx-auto relative z-10">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-text">
+            Join the Cult
+          </h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            Become part of an elite community of developers. Start your journey
+            with us today and transform your coding skills!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Side - Benefits -->
+          <div class="space-y-6">
+            <h3 class="text-3xl font-bold text-[#00ff9d] mb-6">
+              What You'll Get:
+            </h3>
+
+            <div
+              class="flex items-start space-x-4 bg-gray-800/50 p-5 rounded-lg border border-[#00ff9d]/20 hover:border-[#00ff9d]/50 transition-all duration-300 hover:transform hover:translate-x-2"
+            >
+              <div class="text-3xl">🎓</div>
+              <div>
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Exclusive Tutorials
+                </h4>
+                <p class="text-gray-400">
+                  Access premium tutorials and courses created by industry
+                  experts
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start space-x-4 bg-gray-800/50 p-5 rounded-lg border border-[#00b7ff]/20 hover:border-[#00b7ff]/50 transition-all duration-300 hover:transform hover:translate-x-2"
+            >
+              <div class="text-3xl">👥</div>
+              <div>
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Networking Opportunities
+                </h4>
+                <p class="text-gray-400">
+                  Connect with developers worldwide and build lasting
+                  professional relationships
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start space-x-4 bg-gray-800/50 p-5 rounded-lg border border-[#8a2be2]/20 hover:border-[#8a2be2]/50 transition-all duration-300 hover:transform hover:translate-x-2"
+            >
+              <div class="text-3xl">🏆</div>
+              <div>
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Competitions & Prizes
+                </h4>
+                <p class="text-gray-400">
+                  Participate in coding challenges and hackathons with exciting
+                  rewards
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start space-x-4 bg-gray-800/50 p-5 rounded-lg border border-[#00ff9d]/20 hover:border-[#00ff9d]/50 transition-all duration-300 hover:transform hover:translate-x-2"
+            >
+              <div class="text-3xl">💼</div>
+              <div>
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Job Board Access
+                </h4>
+                <p class="text-gray-400">
+                  Get exclusive access to job opportunities from our partner
+                  companies
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start space-x-4 bg-gray-800/50 p-5 rounded-lg border border-[#00b7ff]/20 hover:border-[#00b7ff]/50 transition-all duration-300 hover:transform hover:translate-x-2"
+            >
+              <div class="text-3xl">🚀</div>
+              <div>
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Project Collaboration
+                </h4>
+                <p class="text-gray-400">
+                  Work on real-world projects and build an impressive portfolio
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side - Form -->
+          <div
+            class="bg-gray-800/50 backdrop-blur-lg p-8 rounded-2xl border border-[#00ff9d]/30 shadow-2xl"
+          >
+            <h3 class="text-2xl font-bold mb-6 text-center text-[#00ff9d]">
+              Sign Up Now
+            </h3>
+
+            <form id="joinForm" class="space-y-5">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-semibold mb-2 text-gray-300"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#00ff9d]"
+                  placeholder="John Doe"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-semibold mb-2 text-gray-300"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#00ff9d]"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="skillLevel"
+                  class="block text-sm font-semibold mb-2 text-gray-300"
+                  >Skill Level</label
+                >
+                <select
+                  id="skillLevel"
+                  name="skillLevel"
+                  required
+                  class="w-full px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#00ff9d]"
+                >
+                  <option value="">Select your level</option>
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                  <option value="expert">Expert</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  for="interests"
+                  class="block text-sm font-semibold mb-2 text-gray-300"
+                  >Areas of Interest</label
+                >
+                <textarea
+                  id="interests"
+                  name="interests"
+                  rows="3"
+                  required
+                  class="w-full px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#00ff9d] resize-none"
+                  placeholder="e.g., Web Development, Machine Learning, Mobile Apps..."
+                ></textarea>
+              </div>
+
+              <div class="flex items-start">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  name="terms"
+                  required
+                  class="mt-1 mr-3 w-4 h-4"
+                />
+                <label for="terms" class="text-sm text-gray-400">
+                  I agree to the terms and conditions and want to receive
+                  updates about Cult Coders Community
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full gradient-btn text-gray-900 font-bold py-4 rounded-lg text-lg transition-all duration-300 hover:shadow-2xl"
+              >
+                Join the Cult Now! 🚀
+              </button>
+            </form>
+
+            <!-- Success Message (Hidden by default) -->
+            <div
+              id="successMessage"
+              class="hidden success-message mt-6 bg-[#00ff9d]/20 border border-[#00ff9d] rounded-lg p-4 text-center"
+            >
+              <p class="text-[#00ff9d] font-semibold text-lg">
+                🎉 Welcome to Cult Coders!
+              </p>
+              <p class="text-gray-300 text-sm mt-2">
+                Check your email for next steps.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional CTA -->
+        <div class="text-center mt-16">
+          <p class="text-gray-400 mb-4">Already a member?</p>
+          <button
+            class="border-2 border-[#00ff9d] text-[#00ff9d] px-8 py-3 rounded-full font-semibold hover:bg-[#00ff9d] hover:text-gray-900 transition-all duration-300"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-12 px-6">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Brand -->
+          <div>
+            <h3 class="text-2xl font-bold neon-text mb-4">Cult Coders</h3>
+            <p class="text-gray-400 mb-4">
+              Empowering developers worldwide to code, create, and conquer.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-[#00ff9d] hover:text-[#00b7ff] transition-colors duration-300 text-2xl"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-[#00ff9d] hover:text-[#00b7ff] transition-colors duration-300 text-2xl"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-[#00ff9d] hover:text-[#00b7ff] transition-colors duration-300 text-2xl"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-[#00ff9d] hover:text-[#00b7ff] transition-colors duration-300 text-2xl"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-bold mb-4 text-[#00ff9d]">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-[#00ff9d] transition-colors duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#tutorials"
+                  class="text-gray-400 hover:text-[#00ff9d] transition-colors duration-300"
+                  >Tutorials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="text-gray-400 hover:text-[#00ff9d] transition-colors duration-300"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-[#00ff9d] transition-colors duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#join"
+                  class="text-gray-400 hover:text-[#00ff9d] transition-colors duration-300"
+                  >Join Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h4 class="text-lg font-bold mb-4 text-[#00b7ff]">Resources</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-[#00b7ff] transition-colors duration-300"
+                  >Documentation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-[#00b7ff] transition-colors duration-300"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-[#00b7ff] transition-colors duration-300"
+                  >Community Forum</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-[#00b7ff] transition-colors duration-300"
+                  >Code Challenges</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-[#00b7ff] transition-colors duration-300"
+                  >API Reference</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="text-lg font-bold mb-4 text-[#8a2be2]">Contact Us</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex items-center">
+                <svg
+                  class="w-5 h-5 mr-2 text-[#8a2be2]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <a
+                  href="mailto:info@cultcoders.com"
+                  class="hover:text-[#8a2be2] transition-colors duration-300"
+                  >info@cultcoders.com</a
+                >
+              </li>
+              <li class="flex items-center">
+                <svg
+                  class="w-5 h-5 mr-2 text-[#8a2be2]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+                <span>San Francisco, CA</span>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  class="w-5 h-5 mr-2 text-[#8a2be2]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  ></path>
+                </svg>
+                <a
+                  href="tel:+1234567890"
+                  class="hover:text-[#8a2be2] transition-colors duration-300"
+                  >+1 (234) 567-890</a
+                >
+              </li>
+            </ul>
+
+            <!-- Newsletter -->
+            <div class="mt-6">
+              <h5 class="text-sm font-semibold mb-2 text-gray-300">
+                Subscribe to Newsletter
+              </h5>
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  class="flex-1 px-3 py-2 rounded-l-lg bg-gray-800 border border-gray-700 text-sm focus:outline-none focus:border-[#8a2be2]"
+                />
+                <button
+                  class="bg-[#8a2be2] px-4 py-2 rounded-r-lg hover:bg-[#00ff9d] transition-colors duration-300"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-800 pt-8 mt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              &copy; 2024 Cult Coders Community. All rights reserved.
+            </p>
+            <div class="flex space-x-6 text-sm">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-[#00ff9d] transition-colors duration-300"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-[#00ff9d] transition-colors duration-300"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-[#00ff9d] transition-colors duration-300"
+                >Cookie Policy</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollTopBtn"
+      class="fixed bottom-8 right-8 bg-[#00ff9d] text-gray-900 p-4 rounded-full shadow-lg hover:bg-[#00b7ff] transition-all duration-300 opacity-0 pointer-events-none z-50"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+              mobileMenu.classList.add('hidden');
+          });
+      });
+
+      // Sticky Navigation Background on Scroll
+      const nav = document.querySelector('.sticky-nav');
+
+      window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) {
+              nav.classList.add('scrolled');
+          } else {
+              nav.classList.remove('scrolled');
+          }
+      });
+
+      // Scroll to Top Button
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+      window.addEventListener('scroll', () => {
+          if (window.scrollY > 500) {
+              scrollTopBtn.style.opacity = '1';
+              scrollTopBtn.style.pointerEvents = 'auto';
+          } else {
+              scrollTopBtn.style.opacity = '0';
+              scrollTopBtn.style.pointerEvents = 'none';
+          }
+      });
+
+      scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      });
+
+      // Form Submission
+      const joinForm = document.getElementById('joinForm');
+      const successMessage = document.getElementById('successMessage');
+
+      joinForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          // Get form data
+          const formData = new FormData(joinForm);
+          const data = Object.fromEntries(formData);
+
+          // Simulate form submission
+          console.log('Form submitted:', data);
+
+          // Show success message
+          successMessage.classList.remove('hidden');
+
+          // Reset form
+          joinForm.reset();
+
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+              successMessage.classList.add('hidden');
+          }, 5000);
+      });
+
+      // Smooth Scroll for Navigation Links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              const target = document.querySelector(this.getAttribute('href'));
+              if (target) {
+                  const offsetTop = target.offsetTop - 80; // Account for fixed nav
+                  window.scrollTo({
+                      top: offsetTop,
+                      behavior: 'smooth'
+                  });
+              }
+          });
+      });
+
+      // Intersection Observer for Scroll Animations
+      const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -100px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.style.opacity = '1';
+                  entry.target.style.transform = 'translateY(0)';
+              }
+          });
+      }, observerOptions);
+
+      // Observe tutorial and project cards
+      document.querySelectorAll('.tutorial-card, .project-card').forEach(card => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(30px)';
+          card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          observer.observe(card);
+      });
+
+      // Stats Counter Animation
+      const animateCounter = (element, target, duration = 2000) => {
+          let current = 0;
+          const increment = target / (duration / 16);
+          const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                  element.textContent = target + '+';
+                  clearInterval(timer);
+              } else {
+                  element.textContent = Math.floor(current) + '+';
+              }
+          }, 16);
+      };
+
+      // Observe stats section
+      const statsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  const statItems = document.querySelectorAll('.stat-item div:first-child');
+                  statItems.forEach((item, index) => {
+                      const values = [500, 1000, 50, 24];
+                      setTimeout(() => {
+                          animateCounter(item, values[index], 2000);
+                      }, index * 200);
+                  });
+                  statsObserver.unobserve(entry.target);
+              }
+          });
+      }, { threshold: 0.5 });
+
+      const statsSection = document.querySelector('.stat-item')?.parentElement;
+      if (statsSection) {
+          statsObserver.observe(statsSection);
+      }
+
+      // Add hover sound effect (optional - requires audio files)
+      const buttons = document.querySelectorAll('button, a');
+      buttons.forEach(btn => {
+          btn.addEventListener('mouseenter', () => {
+              // Optional: Add hover sound effect
+              // new Audio('hover.mp3').play();
+          });
+      });
+
+      // Parallax Effect for Background
+      window.addEventListener('scroll', () => {
+          const scrolled = window.pageYOffset;
+          const parallax = document.querySelector('.wave');
+          if (parallax) {
+              parallax.style.transform = `translate(-50%, -50%) rotate(${scrolled * 0.05}deg)`;
+          }
+      });
+
+      // Prevent form resubmission on page refresh
+      if (window.history.replaceState) {
+          window.history.replaceState(null, null, window.location.href);
+      }
+
+      // Add loading animation
+      window.addEventListener('load', () => {
+          document.body.style.opacity = '0';
+          setTimeout(() => {
+              document.body.style.transition = 'opacity 0.5s ease';
+              document.body.style.opacity = '1';
+          }, 100);
+      });
+
+      // Dynamic Year in Footer
+      const currentYear = new Date().getFullYear();
+      const yearElement = document.querySelector('footer p');
+      if (yearElement) {
+          yearElement.innerHTML = yearElement.innerHTML.replace('2024', currentYear);
+      }
+
+      // Tutorial Card Click Events
+      const tutorialCards = document.querySelectorAll('.tutorial-card button');
+      tutorialCards.forEach(button => {
+          button.addEventListener('click', (e) => {
+              const cardTitle = e.target.closest('.tutorial-card').querySelector('h3').textContent;
+              console.log(`Starting tutorial: ${cardTitle}`);
+              // Add your tutorial navigation logic here
+              alert(`Loading ${cardTitle} tutorial...`);
+          });
+      });
+
+      // Project Card Overlay Interactions
+      const projectCards = document.querySelectorAll('.project-card');
+      projectCards.forEach(card => {
+          const viewBtn = card.querySelector('.project-overlay button:first-child');
+          const forkBtn = card.querySelector('.project-overlay button:last-child');
+
+          if (viewBtn) {
+              viewBtn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  const projectTitle = card.querySelector('h3').textContent;
+                  console.log(`Viewing project: ${projectTitle}`);
+                  alert(`Opening ${projectTitle}...`);
+              });
+          }
+
+          if (forkBtn) {
+              forkBtn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  const projectTitle = card.querySelector('h3').textContent;
+                  console.log(`Forking project: ${projectTitle}`);
+                  alert(`Forking ${projectTitle} to your account...`);
+              });
+          }
+      });
+
+      // Newsletter Subscription
+      const newsletterForm = document.querySelector('footer .flex');
+      if (newsletterForm) {
+          const newsletterBtn = newsletterForm.querySelector('button');
+          const newsletterInput = newsletterForm.querySelector('input');
+
+          newsletterBtn.addEventListener('click', (e) => {
+              e.preventDefault();
+              const email = newsletterInput.value;
+
+              if (email && email.includes('@')) {
+                  console.log(`Newsletter subscription: ${email}`);
+                  alert(`Thanks for subscribing! Check ${email} for confirmation.`);
+                  newsletterInput.value = '';
+              } else {
+                  alert('Please enter a valid email address.');
+              }
+          });
+      }
+
+      // Keyboard Navigation
+      document.addEventListener('keydown', (e) => {
+          // Press 'Escape' to close mobile menu
+          if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+          }
+
+          // Press 'Home' to scroll to top
+          if (e.key === 'Home') {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+
+          // Press 'End' to scroll to bottom
+          if (e.key === 'End') {
+              e.preventDefault();
+              window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+          }
+      });
+
+      // Add typing effect to tagline
+      const taglines = [
+          "Code. Create. Conquer.",
+          "Learn. Build. Innovate.",
+          "Collaborate. Grow. Succeed."
+      ];
+
+      let taglineIndex = 0;
+      const taglineElement = document.querySelector('.fade-in');
+
+      if (taglineElement) {
+          setInterval(() => {
+              taglineElement.style.opacity = '0';
+              setTimeout(() => {
+                  taglineIndex = (taglineIndex + 1) % taglines.length;
+                  taglineElement.textContent = taglines[taglineIndex];
+                  taglineElement.style.opacity = '1';
+              }, 500);
+          }, 5000);
+      }
+
+      // Add particle effect on mouse move (optional enhancement)
+      let particles = [];
+      const canvas = document.createElement('canvas');
+      canvas.style.position = 'fixed';
+      canvas.style.top = '0';
+      canvas.style.left = '0';
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      canvas.style.pointerEvents = 'none';
+      canvas.style.zIndex = '1';
+      canvas.style.opacity = '0.3';
+
+      const homeSection = document.getElementById('home');
+      if (homeSection) {
+          homeSection.appendChild(canvas);
+          const ctx = canvas.getContext('2d');
+
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+
+          class Particle {
+              constructor(x, y) {
+                  this.x = x;
+                  this.y = y;
+                  this.size = Math.random() * 3 + 1;
+                  this.speedX = Math.random() * 3 - 1.5;
+                  this.speedY = Math.random() * 3 - 1.5;
+                  this.color = `rgba(0, ${Math.random() * 255}, ${Math.random() * 255}, 0.8)`;
+              }
+
+              update() {
+                  this.x += this.speedX;
+                  this.y += this.speedY;
+                  if (this.size > 0.2) this.size -= 0.05;
+              }
+
+              draw() {
+                  ctx.fillStyle = this.color;
+                  ctx.beginPath();
+                  ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                  ctx.fill();
+              }
+          }
+
+          let mouseX = 0;
+          let mouseY = 0;
+
+          homeSection.addEventListener('mousemove', (e) => {
+              mouseX = e.clientX;
+              mouseY = e.clientY;
+
+              for (let i = 0; i < 3; i++) {
+                  particles.push(new Particle(mouseX, mouseY));
+              }
+          });
+
+          function animateParticles() {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+              for (let i = 0; i < particles.length; i++) {
+                  particles[i].update();
+                  particles[i].draw();
+
+                  if (particles[i].size <= 0.2) {
+                      particles.splice(i, 1);
+                      i--;
+                  }
+              }
+
+              requestAnimationFrame(animateParticles);
+          }
+
+          animateParticles();
+
+          window.addEventListener('resize', () => {
+              canvas.width = window.innerWidth;
+              canvas.height = window.innerHeight;
+          });
+      }
+
+      // Form Validation Enhancement
+      const formInputs = document.querySelectorAll('#joinForm input, #joinForm select, #joinForm textarea');
+
+      formInputs.forEach(input => {
+          input.addEventListener('blur', () => {
+              if (input.value.trim() === '' && input.hasAttribute('required')) {
+                  input.style.borderColor = '#ff4444';
+              } else {
+                  input.style.borderColor = 'rgba(0, 255, 157, 0.3)';
+              }
+          });
+
+          input.addEventListener('focus', () => {
+              input.style.borderColor = '#00ff9d';
+          });
+      });
+
+      // Lazy Loading for Images (if you add images later)
+      const lazyImages = document.querySelectorAll('img[data-src]');
+
+      const imageObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  const img = entry.target;
+                  img.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                  imageObserver.unobserve(img);
+              }
+          });
+      });
+
+      lazyImages.forEach(img => imageObserver.observe(img));
+
+      // Local Storage for Form Data (save draft)
+      const saveFormData = () => {
+          const formData = {
+              name: document.getElementById('name')?.value || '',
+              email: document.getElementById('email')?.value || '',
+              skillLevel: document.getElementById('skillLevel')?.value || '',
+              interests: document.getElementById('interests')?.value || ''
+          };
+          localStorage.setItem('cultCodersFormDraft', JSON.stringify(formData));
+      };
+
+      const loadFormData = () => {
+          const savedData = localStorage.getItem('cultCodersFormDraft');
+          if (savedData) {
+              const data = JSON.parse(savedData);
+              if (document.getElementById('name')) document.getElementById('name').value = data.name;
+              if (document.getElementById('email')) document.getElementById('email').value = data.email;
+              if (document.getElementById('skillLevel')) document.getElementById('skillLevel').value = data.skillLevel;
+              if (document.getElementById('interests')) document.getElementById('interests').value = data.interests;
+          }
+      };
+
+      // Load saved form data on page load
+      loadFormData();
+
+      // Save form data on input
+      formInputs.forEach(input => {
+          input.addEventListener('input', saveFormData);
+      });
+
+      // Clear saved data on successful submission
+      joinForm.addEventListener('submit', () => {
+          localStorage.removeItem('cultCodersFormDraft');
+      });
+
+      // Add tooltip functionality
+      const createTooltip = (element, text) => {
+          const tooltip = document.createElement('div');
+          tooltip.className = 'absolute bg-gray-900 text-white text-xs px-2 py-1 rounded shadow-lg -top-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap opacity-0 transition-opacity duration-300';
+          tooltip.textContent = text;
+
+          element.style.position = 'relative';
+          element.appendChild(tooltip);
+
+          element.addEventListener('mouseenter', () => {
+              tooltip.style.opacity = '1';
+          });
+
+          element.addEventListener('mouseleave', () => {
+              tooltip.style.opacity = '0';
+          });
+      };
+
+      // Add tooltips to social icons
+      const socialIcons = document.querySelectorAll('footer .flex.space-x-4 a');
+      const socialNames = ['Facebook', 'Twitter', 'GitHub', 'LinkedIn'];
+
+      socialIcons.forEach((icon, index) => {
+          if (socialNames[index]) {
+              createTooltip(icon, socialNames[index]);
+          }
+      });
+
+      // Console Easter Egg
+      console.log('%c👨‍💻 Cult Coders Community 👩‍💻', 'color: #00ff9d; font-size: 24px; font-weight: bold;');
+      console.log('%cLooking for talented developers! Check out our careers page.', 'color: #00b7ff; font-size: 14px;');
+      console.log('%cInterested in contributing? Visit: https://github.com/cultcoders', 'color: #8a2be2; font-size: 12px;');
+
+      // Performance Monitoring
+      window.addEventListener('load', () => {
+          const loadTime = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
+          console.log(`Page loaded in ${loadTime}ms`);
+      });
+
+      // Dark Mode Toggle (bonus feature - can be uncommented)
+      
+      const darkModeToggle = document.createElement('button');
+      darkModeToggle.innerHTML = '🌙';
+      darkModeToggle.className = 'fixed top-20 right-8 bg-gray-800 p-3 rounded-full z-50 hover:bg-gray-700 transition-all duration-300';
+      document.body.appendChild(darkModeToggle);
+
+      darkModeToggle.addEventListener('click', () => {
+          document.body.classList.toggle('light-mode');
+          darkModeToggle.innerHTML = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+      });
+      
+
+      // Initialize all animations on page load
+      console.log('Cult Coders website loaded successfully! 🚀');
+    </script>
+  </body>
+</html>
