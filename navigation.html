@@ -1,0 +1,242 @@
+   <!-- Navigation -->
+    <!-- Enhanced Navigation with Gradient, Shadows & Rounded Design -->
+    <nav class="sticky-nav fixed w-full top-0 z-50 px-6 py-3">
+      <div class="container mx-auto">
+        <!-- Main Nav Container with Glass Effect -->
+        <div
+          class="nav-container bg-gradient-to-r from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700/50 px-6 py-4"
+        >
+          <div class="flex justify-between items-center">
+            <!-- Logo Section with Gradient -->
+            <div class="flex items-center space-x-3">
+              <div
+                class="logo-icon bg-gradient-to-br from-[#00ff9d] via-[#00b7ff] to-[#8a2be2] p-2 rounded-xl shadow-lg"
+              >
+                <svg
+                  class="w-8 h-8 text-gray-900"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <span
+                  class="text-2xl font-bold bg-gradient-to-r from-[#00ff9d] via-[#00b7ff] to-[#8a2be2] bg-clip-text text-transparent neon-text-logo"
+                >
+                  Cult Coders
+                </span>
+                <p class="text-xs text-gray-400 -mt-1">Community</p>
+              </div>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <ul class="hidden md:flex items-center space-x-2">
+              <li>
+                <a
+                  href="#home"
+                  class="nav-link px-5 py-2.5 rounded-xl text-white hover:text-[#00ff9d] transition-all duration-300 relative group"
+                >
+                  <span class="relative z-10">Home</span>
+                  <div
+                    class="nav-link-bg absolute inset-0 bg-gradient-to-r from-[#00ff9d]/10 to-[#00b7ff]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#tutorials"
+                  class="nav-link px-5 py-2.5 rounded-xl text-white hover:text-[#00b7ff] transition-all duration-300 relative group"
+                >
+                  <span class="relative z-10">Tutorials</span>
+                  <div
+                    class="nav-link-bg absolute inset-0 bg-gradient-to-r from-[#00b7ff]/10 to-[#8a2be2]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="nav-link px-5 py-2.5 rounded-xl text-white hover:text-[#8a2be2] transition-all duration-300 relative group"
+                >
+                  <span class="relative z-10">Projects</span>
+                  <div
+                    class="nav-link-bg absolute inset-0 bg-gradient-to-r from-[#8a2be2]/10 to-[#00ff9d]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="nav-link px-5 py-2.5 rounded-xl text-white hover:text-[#00ff9d] transition-all duration-300 relative group"
+                >
+                  <span class="relative z-10">About</span>
+                  <div
+                    class="nav-link-bg absolute inset-0 bg-gradient-to-r from-[#00ff9d]/10 to-[#00b7ff]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </li>
+            </ul>
+
+            <!-- CTA Button & Mobile Menu -->
+            <div class="flex items-center space-x-4">
+              <!-- Join Button with Gradient -->
+              <a
+                href="#join"
+                class="hidden md:block join-nav-btn bg-gradient-to-r from-[#00ff9d] to-[#00b7ff] text-gray-900 px-6 py-2.5 rounded-xl font-semibold shadow-lg hover:shadow-[#00ff9d]/50 transition-all duration-300 hover:scale-105"
+              >
+                Join Us
+              </a>
+
+              <!-- Mobile Menu Button -->
+              <button
+                class="md:hidden mobile-menu-btn bg-gradient-to-r from-[#00ff9d]/20 to-[#00b7ff]/20 p-3 rounded-xl border border-[#00ff9d]/30 hover:border-[#00ff9d] transition-all duration-300"
+                id="mobile-menu-btn"
+              >
+                <svg
+                  class="w-6 h-6 text-[#00ff9d]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enhanced Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden mt-4 mobile-menu-container bg-gradient-to-br from-gray-900/98 via-gray-800/98 to-gray-900/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700/50 p-6 animate-slideDown"
+        >
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#home"
+                class="mobile-nav-link flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-[#00ff9d]/10 hover:to-[#00b7ff]/10 transition-all duration-300 border border-transparent hover:border-[#00ff9d]/30"
+              >
+                <svg
+                  class="w-5 h-5 text-[#00ff9d]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  ></path>
+                </svg>
+                <span
+                  class="text-white hover:text-[#00ff9d] transition-colors duration-300"
+                  >Home</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#tutorials"
+                class="mobile-nav-link flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-[#00b7ff]/10 hover:to-[#8a2be2]/10 transition-all duration-300 border border-transparent hover:border-[#00b7ff]/30"
+              >
+                <svg
+                  class="w-5 h-5 text-[#00b7ff]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  ></path>
+                </svg>
+                <span
+                  class="text-white hover:text-[#00b7ff] transition-colors duration-300"
+                  >Tutorials</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="mobile-nav-link flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-[#8a2be2]/10 hover:to-[#00ff9d]/10 transition-all duration-300 border border-transparent hover:border-[#8a2be2]/30"
+              >
+                <svg
+                  class="w-5 h-5 text-[#8a2be2]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+                <span
+                  class="text-white hover:text-[#8a2be2] transition-colors duration-300"
+                  >Projects</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="mobile-nav-link flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-[#00ff9d]/10 hover:to-[#00b7ff]/10 transition-all duration-300 border border-transparent hover:border-[#00ff9d]/30"
+              >
+                <svg
+                  class="w-5 h-5 text-[#00ff9d]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                <span
+                  class="text-white hover:text-[#00ff9d] transition-colors duration-300"
+                  >About</span
+                >
+              </a>
+            </li>
+            <li class="pt-3 border-t border-gray-700/50">
+              <a
+                href="#join"
+                class="mobile-nav-link flex items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#00ff9d] to-[#00b7ff] text-gray-900 font-semibold hover:shadow-lg hover:shadow-[#00ff9d]/50 transition-all duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                  ></path>
+                </svg>
+                <span>Join the Community</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
