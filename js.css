@@ -1,0 +1,141 @@
+/* === Global Styles === */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Animated Background === */
+.animated-bg {
+  background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e);
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg,
+    rgba(0, 255, 157, 0.1),
+    rgba(0, 183, 255, 0.1),
+    rgba(138, 43, 226, 0.1));
+  animation: wave 15s infinite linear;
+  top: -50%;
+  left: -50%;
+  z-index: 0;
+}
+
+@keyframes wave {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* === Text Effects === */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #00ff9d;
+  width: fit-content;
+  margin: 0 auto;
+  animation: typing 3s steps(0, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in 3s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* === Neon Text === */
+.neon-text {
+  text-shadow: 0 0 10px rgba(0, 255, 157, 0.6),
+               0 0 20px rgba(0, 183, 255, 0.4),
+               0 0 30px rgba(138, 43, 226, 0.2);
+}
+
+/* === Tutorial Cards === */
+.tutorial-card {
+  background: rgba(26, 26, 46, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  margin: 1rem;
+  padding: 1.5rem;
+}
+
+.tutorial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 255, 157, 0.2);
+}
+
+/* === Gradient Button === */
+.gradient-btn {
+  background: linear-gradient(90deg, #00ff9d, #00b7ff);
+  color: #0a0a0a;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size:1.1rem;
+  padding: 0.9rem 2rem;
+  letter-spacing: 1px;
+}
+
+.gradient-btn:hover {
+  background: linear-gradient(90deg, #00b7ff, #8a2be2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 255, 157, 0.3);
+}
+
+/* === Utility Classes === */
+.text-center { text-align: center; }
+.text-gray-300 { color: #d1d5db; }
+.text-\[\#00ff9d\] { color: #00ff9d; }
+.mt-4 { margin-top: 1rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.rounded-xl { border-radius: 1rem; }
+.border { border: 1px solid rgba(0, 255, 157, 0.2); }
+.w-72 { width: 18rem; }
+.font-bold { font-weight: bold; }
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .tutorial-card {
+    width: 90%;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
